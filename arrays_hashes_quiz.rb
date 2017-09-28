@@ -15,6 +15,7 @@ puts lines[-1]
 3
 # 5. Add 'Airport' to the start of the array
 lines.unshift("Airport")
+lines.insert)0, "Airport"
 # 6. Add 'York Place' to the end of the array
 lines.push("York Place")
 # 7. Remove 'Edinburgh Park' from the array using it's name
@@ -22,7 +23,7 @@ lines.delete("Edinburgh Park")
 # 8. Delete 'Edinburgh Park' from the array by index
 lines.delete_at(1)
 # 9. Reverse the positions of the stops in the array
-lines.reverse
+lines.reverse!()
 ### B. Given the following data structure:
 
 my_hash = {"0" => "Zero", 1 => "One", :two => "Two", "two" => 2}
@@ -36,6 +37,7 @@ puts my_hash.keys[3]
 puts my_hash["two"]
 # 4. How would you add `{3 => "Three"}` to the hash?
 my_hash[3] = "Three"
+my_hash[3] << "Three"
 # 5. How would you add `{:four => 4}` to the hash?
 my_hash[:four] = 4
 ### C. Given the following data structure:
@@ -70,14 +72,6 @@ users = {
       "colin" => :snake
     }
   }
-  "Laurence" => {
-    :twitter => "nil",
-    :favourite_numbers => [12, 16472],
-    :home_town => "Edinburgh",
-    :pets => {
-      "Rhiannon" => :human_child,
-      "hugo" => :toy_dog
-    }
 }
 
 # 1. Return Jonathan's Twitter handle (i.e. the string `"jonnyt"`)
@@ -90,10 +84,23 @@ puts users["Erik"][:favourite_numbers]
 puts users["Avril"][:pets]["colin"]
 # 5. Return the smallest of Erik's favorite numbers
 puts users["Erik"][:favourite_numbers][0]
+puts usners["Erik"][:favourite_numbers].min()
 # 6. Add the number `7` to Erik's favorite numbers
 users["Erik"][:favourite_numbers] << 7
+users["Erik"][:favourite_numbers].push(7)
+users["Erik"][:favourite_numbers].insert(0, 7)
 # 7. Change Erik's hometown to Edinburgh
 users["Erik"][:home_town] = "Edinburgh"
+
 # 8. Add a pet dog to Erik called "Fluffy"
 users["Erik"][:pets]["fluffy"] = :dog
 # 9. Add yourself to the users hash
+users["Laurence"] = {
+  :twitter => "nil",
+  :favourite_numbers => [12, 16472],
+  :home_town => "Edinburgh",
+  :pets => {
+    "Rhiannon" => :human_child,
+    "Hugo" => :toy_dog
+  }
+}
