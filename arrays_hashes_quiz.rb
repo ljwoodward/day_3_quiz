@@ -15,7 +15,6 @@ puts lines[-1]
 3
 # 5. Add 'Airport' to the start of the array
 lines.unshift("Airport")
-puts lines
 # 6. Add 'York Place' to the end of the array
 lines.push("York Place")
 # 7. Remove 'Edinburgh Park' from the array using it's name
